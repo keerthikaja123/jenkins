@@ -76,7 +76,7 @@
 			</build>
 		</profile>
 <profile>
-			<id>smoke</id>
+			<id>smoke1</id>
 
 			<build>
 				<pluginManagement>
@@ -87,7 +87,7 @@
 							<version>3.0.0-M7</version>
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>testng_smoke.xml</suiteXmlFile>
+									<suiteXmlFile>testng_smoke1.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
