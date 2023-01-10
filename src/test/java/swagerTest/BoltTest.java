@@ -12,7 +12,7 @@ import com.swaglabs.pom.Home;
 import com.swaglabs.pom.Info;
 
 public class BoltTest extends BaseClass{
-@Test
+@Test(groups="smoke")
 public void addCart() throws IOException
 {
 	//WebDriver driver = null;
@@ -31,7 +31,7 @@ public void addCart() throws IOException
 			
 }
 
-@Test
+@Test(groups="regression")
 public void listOfitems()
 {
 	List<WebElement> j = driver.findElements(By.xpath("//div[@class='inventory_item_name']"));

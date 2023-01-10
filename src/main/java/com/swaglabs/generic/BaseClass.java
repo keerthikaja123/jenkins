@@ -1,7 +1,6 @@
 package com.swaglabs.generic;
 
 import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -13,16 +12,11 @@ import org.testng.annotations.BeforeMethod;
 import com.swaglabs.pom.Home;
 import com.swaglabs.pom.Login;
 
-
-
-
-
-
 public class BaseClass {
 	public WebDriver driver;
 	public WebDriverUtil w;
 	public ReadDataFromProp r = new ReadDataFromProp();
-	@BeforeClass
+	@BeforeClass(groups= {"smoke","regression"})
 	public void launchBrowser() throws IOException {
    driver=new ChromeDriver();
 	
@@ -30,7 +24,7 @@ public class BaseClass {
 	w.maximizewindow();
 	w.waitForPageLoad();
 	}
-	@BeforeMethod
+	@BeforeMethod(groups= {"smoke","regression"})
 	public void setLogin() throws IOException, InterruptedException {
 
 		
@@ -44,13 +38,13 @@ public class BaseClass {
 		ln.login(username,password);
 	
 	}
-	@AfterMethod
+	@AfterMethod(groups= {"smoke","regression"})
 	public void setLogout() throws InterruptedException {
 		Home h=new Home(driver);
 		h.lout();
 	}
 
-	@AfterClass
+	@AfterClass(groups= {"smoke","regression"})
 	public void closeBrowser() {
 		driver.close();
 	}
